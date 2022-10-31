@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="pokemons-list">
+    <ul *ngFor="let pkmn of pokemonsList">
+      <li class="pokemon-item" pkmnBorderCard
+        (click)="goToPokemon(pkmn)"
+      >
+        <img [src]="pkmn.picture" alt={{p.name}>
+        <div class="description">
+          <p>{{ pkmn.name }}</p>
+          <p><strong><small>{{ pkmn.created | date: "dd/mm/yyy" }}</small></strong></p>
+          <span *ngFor="let type of pkmn.types" class="{{ type | pokemonTypeColor }}">
+            {{ type }}
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<a 
+  class="btn-floating btn-large waves-effect waves-light red z-depth-3"
+  style="position: fixed; bottom: 25px; right: 25px"
+  routerLink="/pokemons/add"
+>+</a>

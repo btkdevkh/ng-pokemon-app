@@ -1,14 +1,8 @@
-<h1>List de Pokémons</h1>
-<div class="container">
-  <div class="pokemons-list">
-    <ul *ngFor="let p of pokemonsList">
-      <li class="pokemon-item">
-        <img src={{p.picture}} alt={{p.name}>
-        <div class="description">
-          <h3>{{ p.name }}</h3>
-          <p><strong><small>{{ p.created }}</small></strong></p>
-        </div>
-      </li>
-    </ul>
+<nav>
+  <div class="nav-wrapper teal">
+    <a href="#" class="brand-logo center">
+      Pokédex
+    </a>
   </div>
-</div>
+</nav>
+<router-outlet></router-outlet>
