@@ -15,7 +15,7 @@ export class PokemonFormComponent implements OnInit {
 
   constructor(
     private pokemonService: PokemonService,
-    private router: Router
+    private router: Router,
   ) {}
 
   ngOnInit(): void {

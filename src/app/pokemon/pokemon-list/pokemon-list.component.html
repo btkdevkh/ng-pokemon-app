@@ -1,4 +1,5 @@
 <div class="container">
+  <app-pokemon-search></app-pokemon-search>
   <div class="pokemons-list">
     <ul *ngFor="let pkmn of pokemonsList">
       <li class="pokemon-item" pkmnBorderCard
@@ -18,7 +19,7 @@
 </div>
 
 <a 
-  class="btn-floating btn-large waves-effect waves-light red z-depth-3"
+  class="btn-floating btn-large waves-effect waves-light blue z-depth-3"
   style="position: fixed; bottom: 25px; right: 25px"
   routerLink="/pokemons/add"
 >+</a>

@@ -10,12 +10,15 @@ import { FormsModule } from '@angular/forms';
 import { PokemonFormComponent } from './pokemon-form/pokemon-form.component';
 import { PokemonEditComponent } from './pokemon-edit/pokemon-edit.component';
 import { PokemonAddComponent } from './pokemon-add/pokemon-add.component';
+import { PokemonSearchComponent } from './pokemon-search/pokemon-search.component';
+import { LoaderComponent } from './loader/loader.component';
+import { AuthGuard } from '../auth.guard';
 
 const pokemonRoutes: Routes = [
   { path: 'pokemons', component: PokemonListComponent },
-  { path: 'pokemons/add', component: PokemonAddComponent },
+  { path: 'pokemons/add', component: PokemonAddComponent, canActivate: [AuthGuard] },
   { path: 'pokemons/:id', component: PokemonDetailsComponent },
-  { path: 'pokemons/edit/:id', component: PokemonEditComponent },
+  { path: 'pokemons/edit/:id', component: PokemonEditComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
@@ -27,11 +30,13 @@ const pokemonRoutes: Routes = [
     PokemonFormComponent,
     PokemonEditComponent,
     PokemonAddComponent,
+    PokemonSearchComponent,
+    LoaderComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule.forChild(pokemonRoutes)
+    RouterModule.forChild(pokemonRoutes),
   ],
   providers: [
     PokemonService

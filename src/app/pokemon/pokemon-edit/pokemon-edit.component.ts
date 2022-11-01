@@ -14,7 +14,7 @@ export class PokemonEditComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private pokemonService: PokemonService
+    private pokemonService: PokemonService,
   ) { }
 
   ngOnInit(): void {
